@@ -64,7 +64,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 			e.printStackTrace();
 		}
 		//16. Set the text of the JButton located at hiddenButton to be blank.
-		//button[hiddenButton].setText("");
+		button[hiddenButton].setText("");
 	}
 
 	@Override
