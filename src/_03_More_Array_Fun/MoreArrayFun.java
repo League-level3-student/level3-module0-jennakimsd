@@ -5,7 +5,11 @@ import java.util.Random;
 public class MoreArrayFun {
 	//1. Create a main method to test the other methods you write.
 	public static void main(String[] args) {
-	
+		String[] s = {"what", "am", "i", "doing", "here"};
+		printString(s);
+		reverseString(s);
+		skipString(s);
+		randomString(s);
 	}
 	//2. Write a method that takes an array of Strings and prints all the Strings in the array.
 	public static void printString(String[] arr) {
@@ -18,7 +22,7 @@ public class MoreArrayFun {
 	//3. Write a method that takes an array of Strings and prints all the Strings in the array
 	//   in reverse order.
 	public static void reverseString(String[] arr) {
-		for(int i = 0; i < arr.length; i++) {
+		for(int i = arr.length-1; i >= 0; i--) {
 			System.out.println(arr[i]);
 		}
 	}
@@ -35,10 +39,17 @@ public class MoreArrayFun {
 	//5. Write a method that takes an array of Strings and prints all the Strings in the array
 	//   in a completely random order. Almost every run of the program should result in a different order.
 	public static void randomString(String[] arr) {
-		Random r = new Random();
-		for(int i = 0; i < arr.length; i++) {
-			
-		}
+		 int [] a = new int[arr.length];
+		 Random r = new Random();
+		    for (int i = 0; i < a.length; i++) {
+		        int j = r.nextInt(i + 1);
+		        a[i] = a[j];
+		        a[j] = i;
+		    }
+
+		    for (int i : a) {
+		        System.out.println(arr[i]);
+		    }
 	}
 	
 }
